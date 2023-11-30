@@ -1,0 +1,31 @@
+.header {
+    background-color: #F2D2BD;
+  }
+  
+  .contenedorHeader {
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .logo {
+    width: 10rem;
+    height: 5rem;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .items {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    font-size: 1rem;
+  }

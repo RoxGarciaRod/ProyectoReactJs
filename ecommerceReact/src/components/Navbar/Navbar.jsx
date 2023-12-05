@@ -1,4 +1,4 @@
-import Widget from '../widget/widget'
+import CartWidget from '../CartWidget/CartWidget'
 import './Navbar.css'
 
 
@@ -14,7 +14,7 @@ const Navbar = () => {
                     <a className="items" href="#">Medios de Pago</a>
                     <a className="items" href="#">Favoritos</a>
                 </nav>
-            <Widget />
+            <CartWidget />
             </div>
 
         </header>

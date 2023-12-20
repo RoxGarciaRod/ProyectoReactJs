@@ -1,18 +1,31 @@
 import './ItemListContainer.css'
+import { useEffect, useState } from 'react'
+import { pedirDatos } from '../utils/utils'
+import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
+const ItemListContainer = () => {
+    const [productos, setProductos] = useState([]);
 
-const ItemListContainer = (props) => {
+    const {categorias} = useParams()
+    console.log (categorias)
+
+    useEffect(() => {
+        pedirDatos ()
+        .then((data) => {
+            const items = categorias
+                ? data.filter(prod => prod.categoria === categorias )
+                : data
+            setProductos(items)
+        })
+    }, [categorias])
 
     return (
-        <section className="contenedorProductos">
-            <article className="cardProducto">
-                <h2 className="producto">{props.producto}</h2>
-                <p className="descripcion">{props.descripcion}</p>
-                <strong className="precio">{props.precio}</strong>
-            </article>
-        </section>
+        <>
+        <ItemList productos= {productos} />
+        </>
 
-    )
-}
-
+        )
+    }
+    
 export default ItemListContainer

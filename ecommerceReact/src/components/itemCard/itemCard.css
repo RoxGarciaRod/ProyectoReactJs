@@ -1,0 +1,14 @@
+.cardContainer {
+    display: flex;
+}
+
+.cardProducto {
+    border: solid 3px black;
+    max-width: 300px;
+
+}
+
+.imagenProducto {
+    width: 300px;
+}
+

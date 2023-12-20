@@ -2,18 +2,23 @@
 import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Navbar from './components/Navbar/Navbar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
   return (
-    <>
-    
+    <BrowserRouter>
+  
     <Navbar />
+
+    <Routes>
+      <Route path="/" element={<ItemListContainer/>} />
+      <Route path="/productos/:categorias" element={<ItemListContainer/>} />
+      <Route path="*" element={ <h2>Not found</h2> } />
+    </Routes>
     
-    <ItemListContainer producto="Buzo Luisiana con friza" descripcion="Friza interna talle unico" precio="$6500,00" />
-    <ItemListContainer producto="Buzo celeste con estampa de Stich" descripcion="Friza interna talle unico" precio="$6500,00" />
-    <ItemListContainer producto="Sweter manga globo tejido" descripcion="Talle único, disponible verde oliva y chicle totalmente tejido" precio="$3600,00" />
-    </>
+
+    </BrowserRouter>
   )
 }
 

@@ -47,7 +47,7 @@ const Navbar = () => {
                 <nav className="navbar">
 
                     {links.map((link) =>
-                    <Link className="items" to={link.href} >{link.label}</Link>
+                    <Link className="items" key={link.href} to={link.href} >{link.label}</Link>
                     )}
                 </nav>
             <CartWidget />

@@ -114,14 +114,14 @@ export const MOCK_DATA = [
     {
         id: 15,
         nombre:'Shot con lazo #3',
-        img:"/imagenes/vestido-azul-plumas.jpg",
+        img:"/imagenes/short-lazo-rojo.jpg",
         precio:6500,
         categoria:"Shorts",
         descripcion:`Short de bengalina con detalle de lazo ideal para vestir y combinar como quieras.`
     },
     {
         id: 16,
-        nombre: 'Vestido de fibrana',
+        nombre: 'Vestido de fibrana #1',
         img:"/imagenes/vestido-fucsia-plumas.jpg",
         precio: 5000,
         categoria: "Vestidos",
@@ -150,5 +150,21 @@ export const MOCK_DATA = [
         precio:35500,
         categoria:"Perfumes",
         descripcion:`Mezcladas con notas adictivas de crema de almendras, ámbar líquido y Bourbon de vainilla. Inspirada en un misterio silencioso, tiene notas de cereza negra, Ámbar líquido, ron de coco.`
+    },
+    {
+        id: 20,
+        nombre: 'Vestido de fibrana #2',
+        img:"/imagenes/vestido-rosa-plumas.jpg",
+        precio: 5000,
+        categoria: "Vestidos",
+        descripcion: `Vestido de verano para vacacionar fresco en tela de fibrana.`
+    },
+    {
+        id: 21,
+        nombre: 'Vestido de fibrana #3',
+        img:"/imagenes/vestido-azul-plumas.jpg",
+        precio: 5000,
+        categoria: "Vestidos",
+        descripcion: `Vestido de verano para vacacionar fresco en tela de fibrana.`
     },
 ]

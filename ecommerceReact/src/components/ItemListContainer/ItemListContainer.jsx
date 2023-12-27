@@ -8,7 +8,7 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
 
     const {categorias} = useParams()
-    console.log (categorias)
+    console.log(categorias)
 
     useEffect(() => {
         pedirDatos ()

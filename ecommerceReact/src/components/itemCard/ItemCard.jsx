@@ -1,10 +1,11 @@
 
-import { Link } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import Boton from '../botones/boton';
 import './itemCard.css'
 
 
 const ItemCard = ({item}) => {
+  const navigate = useNavigate()
 
     return (
         <section className="cardContainer">
@@ -14,9 +15,7 @@ const ItemCard = ({item}) => {
             <h3 className="tituloProducto">{item.nombre}</h3>
             <p className="descripcionProducto">{item.descripcion}</p>
             <strong>${item.precio}</strong>
-          <Boton label="ver mas">
-            <Link to={`/item/${item.id}`} ></Link>
-          </Boton>
+          <Boton label="ver mas" onClick={() => navigate(`/item/${item.id}`)}/>
           </article>
         </section>
         )

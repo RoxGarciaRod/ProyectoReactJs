@@ -5,11 +5,9 @@ import ItemDetail from "../itemDetail/ItemDetail"
 
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState(null);
+    const [item, setItem] = useState([]);
 
     const { itemId } = useParams()
-    console.log (itemId)
-    console.log (item)
 
     
         useEffect (() => {

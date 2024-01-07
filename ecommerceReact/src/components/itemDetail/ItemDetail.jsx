@@ -1,9 +1,22 @@
 import { useNavigate } from "react-router-dom"
 import Boton from "../botones/boton"
+import { useState } from "react"
+import QuantitySelector from "./QuantitySelector"
 
 
 const ItemDetail = ({item}) => {
-    const navigate = useNavigate()
+    const [cantidad, setCantidad] = useState(1)
+    //const navigate = useNavigate()
+
+   
+
+   const handleAgregar = () => {
+    const itemToCart= {
+        ...item,
+        cantidad
+    }
+    console.log (itemToCart)
+   }
 
     return (
         <div>
@@ -13,7 +26,11 @@ const ItemDetail = ({item}) => {
             <img className="imagenProducto" src={item.img} alt={item.nombre} />
             <p className="descripcionProducto">{item.descripcion}</p>
             <strong>${item.precio}</strong>
-            <Boton label="ver mas" onClick={() => navigate(`/item/${item.id}`)}/>
+
+            <QuantitySelector cantidad={cantidad} stock={item.stock} setCantidad={setCantidad} />
+
+            
+            <Boton label="Agregar al carrito" onClick={handleAgregar} />
 
         </div>
 

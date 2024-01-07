@@ -13,9 +13,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         pedirDatos ()
         .then((data) => {
-            const items = categorias
-                ? data.filter(prod => prod.categoria === categorias )
-                : data
+            const items = categorias ? data.filter(prod => prod.categoria === categorias ) : data
             setProductos(items)
         })
     }, [categorias])

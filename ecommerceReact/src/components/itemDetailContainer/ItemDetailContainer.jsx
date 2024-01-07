@@ -14,7 +14,6 @@ const ItemDetailContainer = () => {
             pedirDatos()
                 .then ((data) => {
                     setItem ( data.find( prod => prod.id === Number(itemId) ) )
-
                 })
         },[]);
 

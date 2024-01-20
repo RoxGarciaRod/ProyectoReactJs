@@ -14,6 +14,7 @@ const ItemCard = ({item}) => {
             <img className="imagenProducto" src={item.img} alt={item.nombre} />
             <h3 className="tituloProducto">{item.nombre}</h3>
             <p className="descripcionProducto">{item.descripcion}</p>
+            { item.stock <= 10 && <p className="stockProducto" >Quedan solo {item.stock} unidades!</p> }
             <strong>${item.precio}</strong>
           <Boton label="ver mas" onClick={() => navigate(`/item/${item.id}`)}/>
           </article>

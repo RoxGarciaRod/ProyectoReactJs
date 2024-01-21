@@ -1,41 +1,45 @@
 import './ItemListContainer.css'
 import { useEffect, useState } from 'react'
-import { pedirDatos } from '../utils/utils'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import Spinner from '../Loader/Spinner'
-import { collection } from "firebase/firestore"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from '../firebase/config'
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const {categorias} = useParams()
+    const {categorias} = useParams();
 
     useEffect(() => {
 
         setLoading(true)
 
-        //SEGUIR CON CLASE DE FIREBASE PARA USAR EL SERVICIO DE BASE DE DATOS
+        const productosRef = collection(db, 'productos')
+        const q = query (productosRef, where('categoria', '==', categorias ))
 
-        /*pedirDatos ()
-        .then((data) => {
-            const items = categorias ? data.filter(prod => prod.categoria === categorias ) : data
-            setProductos(items)
+        //VERIFICAR PORQUE ME TILDA UNDEFINED EN CATEGORIAS DE USEPARAMS
+        getDocs(q)
+        .then((querySnapshot) => {
+            const docs = querySnapshot.docs.map(doc => {
+                return {
+                    ...doc.data(),
+                    id: doc.id
+                }
+            })
+            console.log (docs)
+            setProductos( docs )
         })
-        .finally(() => setLoading(false))*/
+        .finally(() => setLoading(false))
 
+        
     }, [categorias])
 
     return (
         <>
-      {
-        loading
-          ? <Spinner />
-          : <ItemList productos={productos}/>
-      }
+      { loading ? <Spinner /> : <ItemList productos={productos}/> }
     </>
-
         )
     }
     

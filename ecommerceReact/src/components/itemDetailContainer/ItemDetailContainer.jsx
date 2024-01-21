@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../itemDetail/ItemDetail"
+import Spinner from "../Loader/Spinner"
 import { db } from "../firebase/config"
 import { doc, getDoc } from "firebase/firestore"
-import Spinner from "../Loader/Spinner"
 
 
 const ItemDetailContainer = () => {
@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
 
     
         useEffect (() => {
-            const docRef = doc(db, 'productos',itemId)
+            const docRef = doc(db, 'productos', itemId)
 
             getDoc(docRef)
             .then((docSnapshot) => {

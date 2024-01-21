@@ -2,7 +2,6 @@ import Boton from "../botones/boton"
 import { useContext, useState } from "react"
 import QuantitySelector from "./QuantitySelector"
 import { CartContext } from "../../Context/CartContext"
-import CartView from "../CartWidget/CartView"
 import { Link } from "react-router-dom"
 
 

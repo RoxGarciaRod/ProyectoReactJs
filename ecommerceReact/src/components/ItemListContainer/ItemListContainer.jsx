@@ -17,23 +17,21 @@ const ItemListContainer = () => {
         setLoading(true)
 
         const productosRef = collection(db, 'productos')
-        const q = query (productosRef, where('categoria', '==', categorias ))
 
-        //VERIFICAR PORQUE ME TILDA UNDEFINED EN CATEGORIAS DE USEPARAMS
-        getDocs(q)
+        const productosFilt = categorias ? query(productosRef, where('categoria', '==', categorias) ) : productosRef
+       
+        getDocs( productosFilt )
         .then((querySnapshot) => {
             const docs = querySnapshot.docs.map(doc => {
                 return {
                     ...doc.data(),
-                    id: doc.id
+                    id: doc.id        
                 }
             })
             console.log (docs)
             setProductos( docs )
         })
-        .finally(() => setLoading(false))
-
-        
+        .finally(() => setLoading(false))        
     }, [categorias])
 
     return (

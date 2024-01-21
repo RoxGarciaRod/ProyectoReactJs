@@ -3,6 +3,7 @@ import { CartContext } from "../../Context/CartContext"
 import Boton from "../botones/boton"
 import trashIcon from '../../assets/trash.svg'
 import { UserContext } from "../../Context/UserContext"
+import { Link } from "react-router-dom"
 
 
 const CartView = () => {
@@ -37,6 +38,7 @@ const CartView = () => {
 
             <h4>TOTAL: ${totalCart()}</h4>
             <Boton label="Vaciar carrito" onClick={clearCart} />
+            <Link to="/checkout" > <Boton to="/checkout" label="Terminar mi compra" /></Link>
         </section>
 
     )

@@ -1,14 +1,43 @@
 .cardContainer {
-    display: flex;
+    display: inline-flex;
+    text-align: justify;
+    justify-content: center;
+    margin: 20px;
 }
 
 .cardProducto {
-    border: solid 3px black;
-    max-width: 300px;
-
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+    margin: 10px;
 }
 
 .imagenProducto {
-    width: 300px;
+    max-width: 100%;
+    
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
+.tituloProducto {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.descripcionProducto {
+    color: #555;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.stockProducto {
+    color: red;
+    font-weight: bold;
+}
+
+strong {
+    color: black;
+    font-size: 1.2em;
+}

@@ -16,7 +16,6 @@ const CartView = () => {
             <p>Bienvenido: {user.email}</p>
             <h2>Tu compra</h2>
             <hr />
-
             <ul>
                 {
                     cart.map ((item) => (

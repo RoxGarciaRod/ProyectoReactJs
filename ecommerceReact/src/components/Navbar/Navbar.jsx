@@ -9,7 +9,7 @@ const links = [
     },
     {
         label:'Buzos',
-        href:'/productos/Buzos'
+        href:'/productos/buzos'
     },
     {
         label:'Remeras',
@@ -25,15 +25,15 @@ const links = [
     },
     {
         label:'Shorts',
-        href:'/productos/Shorts'
+        href:'/productos/shorts'
     },
     {
         label:'Vestidos',
-        href:'/productos/Vestidos'
+        href:'/productos/vestidos'
     },
     {
         label:'Perfumes',
-        href:'/productos/Perfumes'
+        href:'/productos/perfumes'
     },
 ]
 

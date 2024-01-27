@@ -1,3 +1,4 @@
+import './cartView.css'
 import { useContext } from "react"
 import { CartContext } from "../../Context/CartContext"
 import Boton from "../botones/boton"
@@ -13,20 +14,19 @@ const CartView = () => {
 
     return (
         <section>
-            <p>Bienvenido: {user.email}</p>
-            <h2>Tu compra</h2>
-            <hr />
+            <p className="user">Bienvenido: {user.email}</p>
+            <h2 className="user">Tu compra</h2>
             <ul>
                 {
                     cart.map ((item) => (
-                        <li key={item.id}>
-                            <img src={item.img} alt="Cart img" />
+                        <li className="cartContainer" key={item.id}>
+                            <img className="imagenCarrito" src={item.img} alt="Cart img" />
                             <div>
                             <h3>{item.nombre}</h3>
                             <p>${item.precio}</p>
                             <p>Cantidad: {item.cantidad * item.cantidad}</p>
 
-                            <Boton onClick={() => (removeItem(item.id))} label={<img className="trashIcon" src={trashIcon} alt="trash icon" />}>
+                            <Boton onClick={() => (removeItem(item.id))} label={<img src={trashIcon} alt="trash icon" />}>
                             </Boton>
                             </div>
 

@@ -8,7 +8,7 @@ const ItemCard = ({ item }) => {
   return (
     <section className="cardContainer">
         <article className="cardProducto">
-          <img className="imagenProducto" src={item.img} alt={item.nombre} />
+          <img className="producto" src={item.img} alt={item.nombre} />
           <h3 className="tituloProducto">{item.nombre}</h3>
           <p className="descripcionProducto">{item.descripcion}</p>
           {item.stock <= 10 && ( <p className="stockProducto">Quedan solo {item.stock} unidades!</p> )}

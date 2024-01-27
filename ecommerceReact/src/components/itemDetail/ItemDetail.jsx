@@ -1,4 +1,5 @@
 import Boton from "../botones/boton"
+import "./itemDetail.css";
 import { useContext, useState } from "react"
 import QuantitySelector from "./QuantitySelector"
 import { CartContext } from "../../Context/CartContext"
@@ -22,9 +23,8 @@ const ItemDetail = ({ item }) => {
     <div>
       <strong> {item.id} </strong>
       <h3 className="tituloProducto">{item.nombre}</h3>
-      <hr />
 
-      <div>
+      <div className="cardDetail">
         <img className="imagenProducto" src={item.img} alt={item.nombre} />
 
         <div>
@@ -43,9 +43,6 @@ const ItemDetail = ({ item }) => {
                 <Boton label="Agregar al carrito" onClick={handleAgregar} />
               </>
           }
-
-
-          
         </div>
       </div>
     </div>

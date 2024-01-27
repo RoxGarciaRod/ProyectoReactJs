@@ -1,4 +1,5 @@
 import Boton from "../botones/boton";
+import "./quantitySelector.css"
 
 const QuantitySelector = ({cantidad, stock, setCantidad}) => {
 
@@ -13,7 +14,7 @@ const QuantitySelector = ({cantidad, stock, setCantidad}) => {
   return (
     <div>
       <Boton onClick={handleRestar} label="-" />
-      <span>{cantidad}</span>
+      <span className="cantidad">{cantidad}</span>
       <Boton onClick={handleSumar} label="+" />
     </div>
   );
